@@ -1,0 +1,40 @@
+{
+
+    "page_title": {
+      "en": "Employees",
+      "fr": "Employés"
+    },
+    "title": {
+      "en": "Title",
+      "fr": "Titre"
+    },
+    "department": {
+      "en": "Department",
+      "fr": "Département"
+    },
+    "active": {
+      "en": "Active",
+      "fr": "Actif"
+    },
+    "email": {
+      "en": "Email",
+      "fr": "Courriel"
+    },
+    "mobile_phone": {
+      "en": "Mobile Phone",
+      "fr": "Cellulaire"
+    },
+    "username": {
+      "en": "Username",
+      "fr": "Nom d'utilisateur"
+    },
+    "firstName": {
+      "en": "Firstname",
+      "fr": "Prénom"
+    },
+    "lastName": {
+      "en": "Lastname",
+      "fr": "Nom de famille"
+    }
+  }
+

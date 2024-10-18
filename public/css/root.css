@@ -1,0 +1,42 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #000;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+}
+#search-form {
+  margin: 0 auto;
+}
+.search-box {
+  border: 1px solid #ccc;
+}
+bg-primary {
+  background-color: #000;
+}
+
+#userList {
+  width: 700px;
+}
+
+.userInfoContainer {
+  padding: 20px 10px 10px 10px;
+  min-width: 700px;
+}
+.listInfo {
+  padding-left: 10px;
+}
+.firstInfo {
+  padding-top: 50px !important;
+}
+.listLabel {
+  font-size: 0.8em;
+  padding-top: 10px;
+}
+
+.userInactive {
+  background: color #2e2e2e;
+}

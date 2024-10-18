@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= pageTitle %></title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Dark mode styles */
+      body {
+        background-color: #121212;
+        color: #e0e0e0;
+      }
+      .card {
+        background-color: #1e1e1e;
+        border: 1px solid #333;
+      }
+      .card-title,
+      .card-text {
+        color: #e0e0e0;
+      }
+      .text-muted {
+        color: #b0b0b0 !important;
+      }
+      .employee-picture {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+      }
+      .floating-button {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // Inline JavaScript to define labels and language
+      let language = "fr";
+      const labels = {
+        username: { en: "Username", fr: "Nom d'utilisateur" },
+        firstName: { en: "First Name", fr: "Prénom" },
+        lastName: { en: "Last Name", fr: "Nom de famille" },
+        title: { en: "Title", fr: "Titre" },
+        department: { en: "Department", fr: "Département" },
+        active: { en: "Active", fr: "Actif" },
+        email: { en: "Email", fr: "Courriel" },
+        mobile_phone: { en: "Mobile Phone", fr: "Téléphone mobile" },
+        applications: { en: "Applications", fr: "Applications" },
+      };
+    </script>
+    <button class="floating-button" onclick="window.location.href='/initiate'">
+      Go Home
+    </button>
+    <div class="container my-5">
+      <h1 class="text-center mb-4 text-light"><%= labels.title[language] %></h1>
+
+      <% if (hasEmployees) { %>
+      <div class="row">
+        <% empls.forEach(function(employee, index) { %>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div
+            class="card shadow-sm"
+            onclick="handleClick('<%= employee._id %>','<%= language %>')"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            title="View Employee Details"
+          >
+            <div class="card-body">
+              <h5 class="card-title">
+                <%= employee.firstName %> <%= employee.lastName %>
+              </h5>
+              <h6 class="card-subtitle mb-2 text-muted">
+                @<%= employee.userName %>
+              </h6>
+              <p class="card-text">
+                <strong> <%=labels.title[language]%>:</strong> <%=
+                employee.title %><br />
+                <strong> <%=labels.department[language]%>:</strong> <%=
+                employee.department %><br />
+                <strong> <%=labels.active[language]%>:</strong> <%=
+                employee.active ? 'Yes' : 'No' %><br />
+                <strong> <%=labels.email[language]%>:</strong> <%=
+                employee.email %>
+                <strong> <%=labels.mobile_phone[language]%>:</strong> <%=
+                employee.mobilePhone %><br />
+              </p>
+              <img
+                src="img/<%= employee.picture %>"
+                class="employee-picture img-fluid border rounded-circle"
+                alt="Employee Picture"
+                width="50"
+                height="50"
+              />
+            </div>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+      <% } else { %>
+      <p class="text-center text-muted">No employees</p>
+      <% } %>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/init.js"></script>
+    <!-- JavaScript for onclick events -->
+    <script>
+      function handleClick(id, language) {
+        params = "";
+        if (language === "en") params = "?lang=en";
+        window.location.href = "/" + id + params;
+      }
+    </script>
+  </body>
+</html>

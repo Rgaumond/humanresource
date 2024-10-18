@@ -1,0 +1,26 @@
+
+LCM Applications A (Specialized/Spécialisées)  id:  0pr923726fVd0xdMB697   groupID: 00g922apdarBLa8sV697
+- Medical 
+    user.department=="Cardiologie" or user.department=="Cardiology"
+- Office
+    user.department=="Human Resources" or user.department=="Ressources Humaines"
+- Education
+    user.department=="Student Affairs" or user.department=="Affaires Étudiantes"
+
+
+LCM Applications B (Microsoft app)  ID: 0prc2zje5011MpuIg697  groupID: 00g92351y56hAVLG9697
+- Medical 
+    user.department=="Pediatrics" or user.department=="Pédiatrie"
+- Office
+    user.department=="Finance" 
+- Education
+    user.department=="Administration" 
+
+
+LCM Applications C (Microsoft / Google app)  0pr92352ft76uXDIo697
+- Medical 
+    user.department=="Information Technology" or user.department=="Technologies de l'Information" 
+- Office
+    user.department=="Information Technology" or user.department=="Technologies de l'Information" 
+- Education
+    user.department=="Information Technology" or user.department=="Technologies de l'Information" 

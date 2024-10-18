@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Dark mode styles */
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+        }
+        .form-wrapper {
+            display: flex;
+            background-color: #1e1e1e;
+            border-radius: 5px;
+            padding: 20px;
+            width: 60%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            align-items: center;
+        }
+        .picture-container {
+            flex: 1;
+            text-align: center;
+            margin-right: 20px;
+        }
+        .picture-container img {
+            border-radius: 50%; /* Make image circular */
+            width: 150px;
+            height: 150px;
+            object-fit: cover; /* Ensure the image covers the area */
+        }
+        .form-container {
+            flex: 2;
+        }
+        .form-label, .form-control {
+            color: #e0e0e0;
+        }
+        .form-control {
+            background-color: #333;
+            border: 1px solid #444;
+        }
+        .form-check-input {
+            background-color: #333;
+            border: 1px solid #444;
+        }
+        .form-check-label {
+            color: #e0e0e0;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+        .floating-div {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1050; /* Make sure it's above other elements */
+        padding: 20px;
+        background-color: #f8f9fa;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        width: 300px;
+        text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <% if (updated) { %>
+    <div id="floatingDiv" class="floating-div">
+        <div class="d-flex justify-content-between">
+          <span class="fs-4">Completed</span>
+          <button type="button" class="btn-close" aria-label="Close" onclick="closeDiv()"></button>
+        </div>
+      </div>
+      <% } %>
+    <div class="container my-5">
+        <div class="form-wrapper">
+            <div class="picture-container">
+                <% if (employee.picture) { %>
+                    <img src="https://users.esolv.ca/img/<%= employee.picture %>" alt="Employee Picture">
+                <% } else { %>
+                    <div style="width: 150px; height: 150px; border-radius: 50%; background-color: #333; display: flex; align-items: center; justify-content: center; color: #e0e0e0; font-size: 1.2rem;">
+                        No Picture
+                    </div>
+                <% } %>
+            </div>
+            <div class="form-container">
+       
+
+                <form action="/update?lang=<%= language %>" method="POST" >
+                    <!-- Hidden field for _id (used for updating) -->
+                    <input type="hidden" name="_id" value="<%= employee._id %>">
+                    <input type="hidden" name="existingPicture" value="<%= employee.picture %>">
+
+ <!-- Username -->
+<div class="mb-3">
+    <label for="userName" class="form-label"><%= labels.username[language] %></label>
+    <input type="text" class="form-control" id="userName" name="userName" value="<%= employee.userName %>" required>
+</div>
+
+<!-- First Name -->
+<div class="mb-3">
+    <label for="firstName" class="form-label"><%= labels.firstName[language] %></label>
+    <input type="text" class="form-control" id="firstName" name="firstName" value="<%= employee.firstName %>" required>
+</div>
+
+<!-- Last Name -->
+<div class="mb-3">
+    <label for="lastName" class="form-label"><%= labels.lastName[language] %></label>
+    <input type="text" class="form-control" id="lastName" name="lastName" value="<%= employee.lastName %>" required>
+</div>
+
+<!-- Title (Dropdown) -->
+<div class="mb-3">
+    <label for="title" class="form-label"><%= labels.title[language] %></label>
+    <select class="form-control" id="title" name="title" required>
+        <% office_titles.forEach(function(title) { %>
+            <option value="<%= title %>" <%= employee.title === title ? 'selected' : '' %>><%= title %></option>
+        <% }); %>
+    </select>
+</div>
+
+<!-- Department (Dropdown) -->
+<div class="mb-3">
+    <label for="department" class="form-label"><%= labels.department[language] %></label>
+    <select class="form-control" id="department" name="department" required>
+        <% office_departments.forEach(function(department) { %>
+            <option value="<%= department %>" <%= employee.department === department ? 'selected' : '' %>><%= department %></option>
+        <% }); %>
+    </select>
+</div>
+
+<!-- Active (Checkbox) -->
+<div class="form-check mb-3">
+    <input class="form-check-input" type="checkbox" id="active_check" name="active_check" value="true" <%= employee.active ? 'checked' : '' %>>
+    <label class="form-check-label" for="active"><%= labels.active[language] %></label>
+    <input type="hidden" name="active" value="false">
+</div>
+
+<!-- Mobile Phone -->
+<div class="mb-3">
+    <label for="mobilePhone" class="form-label"><%= labels.mobile_phone[language] %></label>
+    <input type="tel" class="form-control" id="mobilePhone" name="mobilePhone" value="<%= employee.mobilePhone %>">
+</div
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary">Save Employee</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies (Optional if you need interactive components) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/init.js"></script>
+</body>
+</html>

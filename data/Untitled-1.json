@@ -1,0 +1,46 @@
+[
+  {
+    "_id": "1",
+    "active": true,
+    "firstName": "Yannick",
+    "lastName": "Begin",
+    "userName": "Yannick.Begin@rgoka.com",
+    "title": "Médecin",
+    "secondEmail": "Yannick.Begin@rgoka.com",
+    "mobilePhone": "111-111-1111",
+    "department": "LCM_GroupA"
+  },
+  {
+    "_id": "2",
+    "active": true,
+    "firstName": "Sophie",
+    "lastName": "Begin",
+    "userName": "Sophie.Begin@rgoka.com",
+    "title": "Médecin",
+    "secondEmail": "Sophie.Begin@rgoka.com",
+    "mobilePhone": "111-111-1112",
+    "department": "LCM_GroupB"
+  },
+  {
+    "_id": "3",
+    "active": true,
+    "firstName": "Peter",
+    "lastName": "Begin",
+    "userName": "Peter.Begin@rgoka.com",
+    "title": "Ingénieur",
+    "secondEmail": "Peter.Begin@rgoka.com",
+    "mobilePhone": "111-111-1113",
+    "department": "LCM_GroupA"
+  },
+  {
+    "_id": "4",
+    "active": false,
+    "firstName": "Bob",
+    "lastName": "Begin",
+    "userName": "Bob.Begin@rgoka.com",
+    "title": "Préposé",
+    "secondEmail": "Bob.Begin@rgoka.com",
+    "mobilePhone": "111-111-1114",
+    "department": "LCM_GroupB"
+  }
+]
