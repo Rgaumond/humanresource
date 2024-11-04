@@ -1,6 +1,9 @@
+const path = require("path");
+
 exports.get404 = (req, res, next) => {
-  res.status(404).render("404", {
+  console.log(path.join(__dirname, "views", "employees/404.ejs"));
+  res.status(404).render("employees/404"), {
     pageTitle: "Page Not Found",
-    path: "/employees/404",
-  });
+    path: "/404",
+  };
 };
