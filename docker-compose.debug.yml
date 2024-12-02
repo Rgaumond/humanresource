@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  expressendpoint:
+    image: expressendpoint
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: development
+    ports:
+      - 5606:5606
+      - 9229:9229
+    command: ["node", "--inspect=0.0.0.0:9229", "app.js"]

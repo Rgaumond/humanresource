@@ -16,7 +16,7 @@ router.get("/all/en", employeeController.getEmployees);
 router.get("/jsonListing", employeeController.getEmployeesJSON);
 router.get("/:id([a-fA-F0-9-]{36})", employeeController.getEmployeeById);
 router.post("/update", employeeController.updateEmployee);
-
+router.get("/", employeeController.getEmployees);
 //router.get("/:id", employeeController.getEmployeeById);
 
 // router.get("/:id", employeeController.getEmployeeById);
