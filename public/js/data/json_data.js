@@ -3,13 +3,13 @@ let configurated = false;
 let language;
 //let language = "english";
 
-// let departments = getJSONValuesPerLanguage(medical_departments);
+// let divisions = getJSONValuesPerLanguage(medical_divisions);
 // let titles = getJSONValuesPerLanguage(medical_titles);
 
-//let departments = getJSONValuesPerLanguage(education_departments);
+//let divisions = getJSONValuesPerLanguage(education_divisions);
 // let titles = getJSONValuesPerLanguage(education_titles);
 
-let departments;
+let divisions;
 let titles;
 
 let original_mapping = [

@@ -137,12 +137,12 @@
     </select>
 </div>
 
-<!-- Department (Dropdown) -->
+<!-- division (Dropdown) -->
 <div class="mb-3">
-    <label for="department" class="form-label"><%= labels.department[language] %></label>
-    <select class="form-control" id="department" name="department" required>
-        <% office_departments.forEach(function(department) { %>
-            <option value="<%= department %>" <%= employee.department === department ? 'selected' : '' %>><%= department %></option>
+    <label for="division" class="form-label"><%= labels.division[language] %></label>
+    <select class="form-control" id="division" name="division" required>
+        <% office_divisions.forEach(function(division) { %>
+            <option value="<%= division %>" <%= employee.division === division ? 'selected' : '' %>><%= division %></option>
         <% }); %>
     </select>
 </div>

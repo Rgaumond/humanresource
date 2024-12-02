@@ -1,4 +1,4 @@
-let office_departments = [
+let office_divisions = [
   {
     english: "Information Technology",
     french: "Technologies de l'Information",
@@ -41,7 +41,7 @@ let office_departments = [
   },
 ];
 
-let education_departments = [
+let education_divisions = [
   {
     english: "Education",
     french: "Éducation",
@@ -84,7 +84,7 @@ let education_departments = [
   },
 ];
 
-let medical_departments = [
+let medical_divisions = [
   {
     english: "Emergency Medicine",
     french: "Médecine d'Urgence",
@@ -361,7 +361,7 @@ let newUsers = [
     title: "RH",
     secondEmail: "Daniella.Begin@rgoka.com",
     mobilePhone: "111-111-1115",
-    department: "LCM_HR",
+    division: "LCM_HR",
   },
   {
     _id: "6",
@@ -372,7 +372,7 @@ let newUsers = [
     title: "RH",
     secondEmail: "Fred.Begin@rgoka.com",
     mobilePhone: "111-111-1116",
-    department: "LCM_HR",
+    division: "LCM_HR",
   },
   {
     _id: "7",
@@ -383,7 +383,7 @@ let newUsers = [
     title: "RH",
     secondEmail: "Sebastien.Begin@rgoka.com",
     mobilePhone: "111-111-1117",
-    department: "LCM_HR",
+    division: "LCM_HR",
   },
   {
     _id: "8",
@@ -394,7 +394,7 @@ let newUsers = [
     title: "RH",
     secondEmail: "Roxanne.Begin@rgoka.com",
     mobilePhone: "111-111-1118",
-    department: "LCM_HR",
+    division: "LCM_HR",
   },
   {
     _id: "9",
@@ -405,6 +405,6 @@ let newUsers = [
     title: "RH",
     secondEmail: "Jeremy.Begin@rgoka.com",
     mobilePhone: "111-111-1119",
-    department: "LCM_HR",
+    division: "LCM_HR",
   },
 ];

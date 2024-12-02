@@ -2,13 +2,13 @@ let emergency_data = [
   {
     name: "groupA",
     english: {
-      departments: {
+      divisions: {
         name: "",
         title: "",
       },
     },
     french: {
-      departments: {
+      divisions: {
         name: "",
         title: "",
       },
@@ -17,13 +17,13 @@ let emergency_data = [
   {
     name: "groupB",
     english: {
-      departments: {
+      divisions: {
         name: "",
         title: "",
       },
     },
     french: {
-      departments: {
+      divisions: {
         name: "",
         title: "",
       },
@@ -32,13 +32,13 @@ let emergency_data = [
   {
     name: "groupC",
     english: {
-      departments: {
+      divisions: {
         name: "",
         title: "",
       },
     },
     french: {
-      departments: {
+      divisions: {
         name: "",
         title: "",
       },
@@ -46,7 +46,7 @@ let emergency_data = [
   },
 ];
 
-let emergency_departments = [
+let emergency_divisions = [
   {
     english: "Cardiology",
     french: "Centre de coordination médicale",

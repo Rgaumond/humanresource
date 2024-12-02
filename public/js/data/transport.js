@@ -2,13 +2,13 @@ let transport_data = [
   {
     name: "groupA",
     english: {
-      departments: {
+      divisions: {
         name: "Human Resources",
         title: "Human Resources Manager",
       },
     },
     french: {
-      departments: {
+      divisions: {
         name: "Ressources Humaines",
         title: "Gestionnaire des ressources humaines",
       },
@@ -17,13 +17,13 @@ let transport_data = [
   {
     name: "groupB",
     english: {
-      departments: {
+      divisions: {
         name: "Finance",
         title: "Purchasing Manager",
       },
     },
     french: {
-      departments: {
+      divisions: {
         name: "Finance",
         title: "Gestionnaire des achats",
       },
@@ -32,13 +32,13 @@ let transport_data = [
   {
     name: "groupC",
     english: {
-      departments: {
+      divisions: {
         name: "Information Technology",
         title: "IT Manager",
       },
     },
     french: {
-      departments: {
+      divisions: {
         name: "Technologie",
         title: "Gestionnaire informatique",
       },

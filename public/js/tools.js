@@ -13,11 +13,11 @@ createDropdown = (jsonArray, id, value) => {
   $.each(jsonArray, function (index, item) {
     $("#" + id).append(
       "<option value='" +
-        item.department +
+        item.division +
         "'>" +
         item.title +
         ",  " +
-        item.department +
+        item.division +
         "</option>"
     );
   });
@@ -72,8 +72,8 @@ updateUsersSelection = (userId, el) => {
     return user._id === userId;
   });
   if (user) {
-    let newData = getInfoByDepartment(departments, el.value);
-    user.department = el.value;
+    let newData = getInfoBydivision(divisions, el.value);
+    user.division = el.value;
     user.title = newData.title;
     user.apps = newData.name;
     console.log(users); // Check the updated users array
@@ -82,16 +82,16 @@ updateUsersSelection = (userId, el) => {
   }
 };
 
-getInfoByDepartment = (data, departmentName) => {
+getInfoBydivision = (data, divisionName) => {
   for (let i = 0; i < data.length; i++) {
-    if (data[i].department === departmentName) {
+    if (data[i].division === divisionName) {
       return {
         name: data[i].name,
         title: data[i].title,
       };
     }
   }
-  return null; // Return null if the department is not found
+  return null; // Return null if the division is not found
 };
 
 updateUsers = () => {
@@ -138,7 +138,7 @@ setLabelValues = () => {
   $("#updateUsers").text("Mettre à jour");
   $("#addUser").text("Ajouter utilisateur");
   $(".listLabel:contains('name')").text("nom");
-  $(".listLabel:contains('department')").text("département");
+  $(".listLabel:contains('division')").text("département");
   $(".listLabel:contains('title')").text("titre");
   $(".listLabel:contains('email')").text("courriel");
   $(".listLabel:contains('active')").text("en fonction");
@@ -154,7 +154,7 @@ addNewUSer = () => {
   //   title: "RH",
   //   secondEmail: "Daniella.Begin@rgoka.com",
   //   mobilePhone: "111-111-1115",
-  //   department: "LCM_HR",
+  //   division: "LCM_HR",
   // };
   // users.unshift(newUser);
   // generateList(users);

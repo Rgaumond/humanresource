@@ -1,6 +1,6 @@
 const Employee = require("../models/employee_mongo");
 
-const departments = require("../data/departments.json");
+const divisions = require("../data/divisions.json");
 const labels = require("../data/labels.json");
 const titles = require("../data/titles.json");
 const axios = require("axios");
@@ -29,7 +29,7 @@ exports.getEmployeeById = async (req, res, next) => {
   res.render("employees/edit", {
     employee: employee[0],
     pageTitle: "Employee",
-    office_departments: departments,
+    office_divisions: divisions,
     office_titles: titles,
     labels: labels,
     language: language,
@@ -65,7 +65,7 @@ exports.initiate = async (req, res, next) => {
     firstName: "Lisa",
     lastName: "Simpson",
     title: "Développeur",
-    department: "Technologies de l'Information",
+    division: "Technologies de l'Information",
     active: "false",
     mobilePhone: "111-111-1111",
   };
